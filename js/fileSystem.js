@@ -826,7 +826,7 @@ class FileSystemServices {
 
     const imageLoaderSrc = options.imageLoaderSrc || null;
     const imageFolderSrc = options.imageFolderSrc || null;
-    const imageFileSrc = options.imageFileSrc || null;
+    const imageFileSrc = "https://cdn.jsdelivr.net/gh/cah12/mongo-fs/img/file.png";//options.imageFileSrc || null;
 
     console.log(444, imageLoaderSrc, imageFolderSrc, imageFileSrc)
 
