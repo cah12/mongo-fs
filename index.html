@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>File System Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-treetable/3.2.0/css/jquery.treetable.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-treetable/3.2.0/css/jquery.treetable.theme.default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-treetable/3.2.0/jquery.treetable.min.js"></script>
+
+    <link rel="stylesheet" href="css/fileSystem.css">
+    <script src="js/fileSystem.js"></script>
+</head>
+
+<body>
+    <button class="mongo-fs-save-as"></button>
+    <button class="mongo-fs-explorer"></button>
+    <button class="mongo-fs-login-logout-register"></button>
+    <script>
+        function getDataCb(fileExt) {
+
+        }
+
+        function setDataCb(data, fileExt) {
+
+        }
+
+        const fsOptions = {
+            fsServerUrl: "http://localhost:3000",
+            getDataCb,
+            openCb: setDataCb,
+            //imageLoaderSrc: "img/imageLoader.png",
+            // imageFolderSrc: "img/folder.png",
+            // imageFileSrc: "img/file.png",
+            listOfFileTypes: [
+                { display: "Grapher plot (*.plt)", ext: ".plt", defaultFilename: "Grapher Plot" },
+                { display: "Image (*.png)", ext: ".png", defaultFilename: "PNG Image" },
+                { display: "Excel (*.xls)", ext: ".xls", defaultFilename: "Excel Worksheet" }
+            ],
+            listOfOpenWithTypes: [
+                { name: "Text Editor", options: { encoding: "utf8", flag: "r" } },
+                { name: "Grapher", options: { encoding: "base64", flag: "r" } }
+            ]
+        }
+        const fileSystemServices = new FileSystemServices(fsOptions);       
+    </script>
+</body>
+
+</html>
